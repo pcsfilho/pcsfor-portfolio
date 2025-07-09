@@ -1,5 +1,4 @@
-
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail, Heart } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,10 +12,11 @@ const Footer = () => {
             {/* Brand */}
             <div className="text-center md:text-left">
               <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4">
-                Paulo Cezar
+                Paulo Filho
               </h3>
               <p className="text-gray-400 leading-relaxed">
-                Full Stack Developer & Líder Técnico apaixonado por criar soluções que fazem a diferença.
+                Full Stack Developer & Líder Técnico apaixonado por criar
+                soluções que fazem a diferença.
               </p>
             </div>
 
@@ -24,22 +24,40 @@ const Footer = () => {
             <div className="text-center">
               <h4 className="text-lg font-semibold mb-4">Links Rápidos</h4>
               <div className="space-y-2">
-                <a href="#home" className="block text-gray-400 hover:text-primary transition-colors">
+                <a
+                  href="#home"
+                  className="block text-gray-400 hover:text-primary transition-colors"
+                >
                   Início
                 </a>
-                <a href="#about" className="block text-gray-400 hover:text-primary transition-colors">
+                <a
+                  href="#about"
+                  className="block text-gray-400 hover:text-primary transition-colors"
+                >
                   Sobre
                 </a>
-                <a href="#experience" className="block text-gray-400 hover:text-primary transition-colors">
+                <a
+                  href="#experience"
+                  className="block text-gray-400 hover:text-primary transition-colors"
+                >
                   Experiência
                 </a>
-                <a href="#projects" className="block text-gray-400 hover:text-primary transition-colors">
+                <a
+                  href="#projects"
+                  className="block text-gray-400 hover:text-primary transition-colors"
+                >
                   Projetos
                 </a>
-                <a href="#skills" className="block text-gray-400 hover:text-primary transition-colors">
+                <a
+                  href="#skills"
+                  className="block text-gray-400 hover:text-primary transition-colors"
+                >
                   Habilidades
                 </a>
-                <a href="#contact" className="block text-gray-400 hover:text-primary transition-colors">
+                <a
+                  href="#contact"
+                  className="block text-gray-400 hover:text-primary transition-colors"
+                >
                   Contato
                 </a>
               </div>
@@ -50,14 +68,14 @@ const Footer = () => {
               <h4 className="text-lg font-semibold mb-4">Contato</h4>
               <div className="space-y-2 text-gray-400">
                 <p>Salvador, BA - Brasil</p>
-                <a 
-                  href="mailto:paulo.ecomp@gmail.com" 
+                <a
+                  href="mailto:paulo.ecomp@gmail.com"
                   className="block hover:text-primary transition-colors"
                 >
                   paulo.ecomp@gmail.com
                 </a>
-                <a 
-                  href="tel:+5571992346773" 
+                <a
+                  href="tel:+5571992346773"
                   className="block hover:text-primary transition-colors"
                 >
                   (71) 99234-6773
@@ -96,13 +114,13 @@ const Footer = () => {
           <div className="border-t border-gray-800 pt-8 text-center">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-gray-400 text-sm">
-                © {currentYear} Paulo Cezar dos Santos Filho. Todos os direitos reservados.
+                © {currentYear} Paulo Filho. Todos os direitos reservados.
               </p>
-              <div className="flex items-center text-gray-400 text-sm">
-                <span>Feito com</span>
+              {/* <div className="flex items-center text-gray-400 text-sm">
+                <span>Feito por</span>
                 <Heart className="w-4 h-4 mx-1 text-red-500 fill-current" />
                 <span>e React.js</span>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
