@@ -1,15 +1,18 @@
 
-import { Calendar, MapPin, ExternalLink } from 'lucide-react';
+import { Calendar, MapPin } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const Experience = () => {
+  const { t } = useLanguage();
+
   const experiences = [
     {
       company: 'Vollare',
       position: 'Líder Técnico',
       period: '2020 - Presente',
-      location: 'Salvador, BA',
+      location: 'Salvador/BA e Feira de Santana/BA',
       description: 'Lidero uma equipe de desenvolvimento focada em soluções inovadoras para o setor de tecnologia. Responsável pela arquitetura de sistemas, mentoring da equipe e definição de estratégias técnicas.',
       achievements: [
         'Liderança de equipe de 8+ desenvolvedores',
@@ -24,7 +27,7 @@ const Experience = () => {
       company: 'ClickZap',
       position: 'Desenvolvedor Full Stack',
       period: '2019 - 2023',
-      location: 'Salvador, BA',
+      location: 'Salvador/BA e Feira de Santana/BA',
       description: 'Desenvolvimento de plataforma de automação de marketing digital com foco em WhatsApp Business. Participei desde a concepção até a entrega de features críticas do produto.',
       achievements: [
         'Desenvolvimento de APIs REST robustas',
@@ -39,7 +42,7 @@ const Experience = () => {
       company: 'Gerenciagram',
       position: 'Desenvolvedor Full Stack',
       period: '2018 - 2019',
-      location: 'Salvador, BA',
+      location: 'Salvador/BA e Feira de Santana/BA',
       description: 'Primeiro emprego profissional, onde desenvolvi fundamentos sólidos em desenvolvimento web. Trabalhei em projetos de gestão empresarial e automação de processos.',
       achievements: [
         'Desenvolvimento de sistema de gestão completo',
@@ -53,13 +56,13 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gray-50">
+    <section id="experience" className="py-20 bg-muted/20">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Experiência <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Profissional</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              {t('professionalExperience').split(' ')[0]} <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">{t('professionalExperience').split(' ')[1]}</span>
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
           </div>
@@ -72,24 +75,24 @@ const Experience = () => {
             {experiences.map((exp, index) => (
               <div key={index} className="relative mb-12 last:mb-0">
                 {/* Timeline dot */}
-                <div className={`absolute left-2 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 rounded-full border-4 border-white ${
+                <div className={`absolute left-2 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 rounded-full border-4 border-background ${
                   exp.type === 'current' ? 'bg-primary' : 'bg-secondary'
                 } shadow-lg z-10`}></div>
 
                 {/* Content */}
                 <div className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:ml-auto md:pl-12'}`}>
-                  <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-white">
+                  <Card className="p-6 hover:shadow-xl transition-all duration-300 border-border bg-card">
                     <div className="flex items-start justify-between mb-4">
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-1">{exp.position}</h3>
+                        <h3 className="text-xl font-bold text-foreground mb-1">{exp.position}</h3>
                         <h4 className="text-lg font-semibold text-primary mb-2">{exp.company}</h4>
                       </div>
                       {exp.type === 'current' && (
-                        <Badge className="bg-primary text-white">Atual</Badge>
+                        <Badge className="bg-primary text-white">{t('current')}</Badge>
                       )}
                     </div>
 
-                    <div className="flex items-center text-gray-600 text-sm mb-4 space-x-4">
+                    <div className="flex items-center text-foreground/60 text-sm mb-4 space-x-4">
                       <div className="flex items-center">
                         <Calendar className="w-4 h-4 mr-1" />
                         {exp.period}
@@ -100,14 +103,14 @@ const Experience = () => {
                       </div>
                     </div>
 
-                    <p className="text-gray-700 mb-4 leading-relaxed">{exp.description}</p>
+                    <p className="text-foreground/80 mb-4 leading-relaxed">{exp.description}</p>
 
                     {/* Achievements */}
                     <div className="mb-4">
-                      <h5 className="font-semibold text-gray-900 mb-2">Principais conquistas:</h5>
+                      <h5 className="font-semibold text-foreground mb-2">{t('mainAchievements')}</h5>
                       <ul className="space-y-1">
                         {exp.achievements.map((achievement, achIndex) => (
-                          <li key={achIndex} className="text-gray-700 text-sm flex items-start">
+                          <li key={achIndex} className="text-foreground/70 text-sm flex items-start">
                             <span className="text-primary mr-2 mt-1">•</span>
                             {achievement}
                           </li>
@@ -117,10 +120,10 @@ const Experience = () => {
 
                     {/* Technologies */}
                     <div>
-                      <h5 className="font-semibold text-gray-900 mb-2">Tecnologias:</h5>
+                      <h5 className="font-semibold text-foreground mb-2">{t('technologies')}</h5>
                       <div className="flex flex-wrap gap-2">
                         {exp.technologies.map((tech, techIndex) => (
-                          <Badge key={techIndex} variant="outline" className="text-xs">
+                          <Badge key={techIndex} variant="outline" className="text-xs border-border">
                             {tech}
                           </Badge>
                         ))}

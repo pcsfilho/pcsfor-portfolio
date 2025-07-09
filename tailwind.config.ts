@@ -26,11 +26,11 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: '#10b981', // Verde moderno
+					DEFAULT: '#ff7a00', // Laranja Inter
 					foreground: '#ffffff'
 				},
 				secondary: {
-					DEFAULT: '#8b5cf6', // Lilás
+					DEFAULT: '#ff4d00', // Laranja mais vibrante
 					foreground: '#ffffff'
 				},
 				accent: {
@@ -38,8 +38,8 @@ export default {
 					foreground: 'hsl(var(--accent-foreground))'
 				},
 				muted: {
-					DEFAULT: '#f8fafc',
-					foreground: '#64748b'
+					DEFAULT: '#1a1a1a',
+					foreground: '#a3a3a3'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
