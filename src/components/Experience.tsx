@@ -1,58 +1,76 @@
-
-import { Calendar, MapPin } from 'lucide-react';
-import { Card } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { useLanguage } from '@/hooks/useLanguage';
+import { Calendar, MapPin } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const Experience = () => {
   const { t } = useLanguage();
 
   const experiences = [
     {
-      company: 'Vollare',
-      position: 'Líder Técnico',
-      period: '2020 - Presente',
-      location: 'Salvador/BA e Feira de Santana/BA',
-      description: 'Lidero uma equipe de desenvolvimento focada em soluções inovadoras para o setor de tecnologia. Responsável pela arquitetura de sistemas, mentoring da equipe e definição de estratégias técnicas.',
+      company: "Vollare",
+      position:
+        `${t("experiencesVollarePosition")}` +
+        `, ${t("fullStack")}` +
+        ` & Scrum Master`,
+      period: t("experiencesVollarePeriod"),
+      location: t("experiencesVollareLocation"),
+      description: t("experiencesVollareDescription"),
       achievements: [
-        'Liderança de equipe de 8+ desenvolvedores',
-        'Implementação de arquiteturas escaláveis com AWS',
-        'Redução de 40% no tempo de deploy através de CI/CD',
-        'Mentoring e desenvolvimento técnico da equipe'
+        t("experiencesVollareDescription"),
+        t("experiencesAchievementsVollareLead"),
+        t("experiencesAchievementsVollareAws"),
+        t("experiencesAchievementsVollareMentoring"),
+        t("experiencesAchievementsVollareScrum"),
       ],
-      technologies: ['Node.js', 'Vue.js', 'AWS', 'Docker', 'PostgreSQL', 'Redis'],
-      type: 'current'
+      technologies: [
+        "Node.js",
+        "Vue.js",
+        "AWS",
+        "Docker",
+        "PostgreSQL",
+        "Redis",
+      ],
+      type: "current",
     },
     {
-      company: 'ClickZap',
-      position: 'Desenvolvedor Full Stack',
-      period: '2019 - 2023',
-      location: 'Salvador/BA e Feira de Santana/BA',
-      description: 'Desenvolvimento de plataforma de automação de marketing digital com foco em WhatsApp Business. Participei desde a concepção até a entrega de features críticas do produto.',
+      company: "ClickZap",
+      position: t("experiencesClickZapPosition"),
+      period: t("experiencesClickZapPeriod"),
+      location: t("experiencesClickZapLocation"),
+      description: t("experiencesClickZapDescription"),
       achievements: [
-        'Desenvolvimento de APIs REST robustas',
-        'Criação de dashboard reativo com Vue.js',
-        'Integração com APIs do WhatsApp Business',
-        'Otimização de performance em aplicações de alto volume'
+        t("experiencesAchievementsClickZapSkils1"),
+        t("experiencesAchievementsClickZapSkils2"),
+        t("experiencesAchievementsClickZapSkils3"),
+        t("experiencesAchievementsClickZapSkils4"),
       ],
-      technologies: ['Node.js', 'Vue.js', 'MySQL', 'Redis', 'WhatsApp API', 'Jest'],
-      type: 'past'
+      technologies: [
+        "Node.js",
+        "Vue.js",
+        "MySQL",
+        "Redis",
+        "WhatsApp API",
+        "Jest",
+      ],
+      type: "past",
     },
     {
-      company: 'Gerenciagram',
-      position: 'Desenvolvedor Full Stack',
-      period: '2018 - 2019',
-      location: 'Salvador/BA e Feira de Santana/BA',
-      description: 'Primeiro emprego profissional, onde desenvolvi fundamentos sólidos em desenvolvimento web. Trabalhei em projetos de gestão empresarial e automação de processos.',
+      company: "Gerenciagram",
+      position: t("experiencesGerenciagramPosition"),
+      period: t("experiencesGerenciagramPeriod"),
+      location: t("experiencesGerenciagramLocation"),
+      description: t("experiencesGerenciagramDescription"),
       achievements: [
-        'Desenvolvimento de sistema de gestão completo',
-        'Criação de relatórios automatizados',
-        'Implementação de autenticação e autorização',
-        'Colaboração em equipe ágil'
+        t("experiencesAchievementsGerenciagramSkils1"),
+        t("experiencesAchievementsGerenciagramSkils2"),
+        t("experiencesAchievementsGerenciagramSkils3"),
+        t("experiencesAchievementsGerenciagramSkils4"),
+        t("experiencesAchievementsGerenciagramSkils5"),
       ],
-      technologies: ['PHP', 'JavaScript', 'MySQL', 'Bootstrap', 'jQuery'],
-      type: 'past'
-    }
+      technologies: ["PHP", "JavaScript", "MySQL", "Bootstrap", "jQuery"],
+      type: "past",
+    },
   ];
 
   return (
@@ -62,7 +80,10 @@ const Experience = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              {t('professionalExperience').split(' ')[0]} <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">{t('professionalExperience').split(' ')[1]}</span>
+              {t("professionalExperience").split(" ")[0]}{" "}
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                {t("professionalExperience").split(" ")[1]}
+              </span>
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
           </div>
@@ -75,20 +96,32 @@ const Experience = () => {
             {experiences.map((exp, index) => (
               <div key={index} className="relative mb-12 last:mb-0">
                 {/* Timeline dot */}
-                <div className={`absolute left-2 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 rounded-full border-4 border-background ${
-                  exp.type === 'current' ? 'bg-primary' : 'bg-secondary'
-                } shadow-lg z-10`}></div>
+                <div
+                  className={`absolute left-2 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 rounded-full border-4 border-background ${
+                    exp.type === "current" ? "bg-primary" : "bg-secondary"
+                  } shadow-lg z-10`}
+                ></div>
 
                 {/* Content */}
-                <div className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:ml-auto md:pl-12'}`}>
+                <div
+                  className={`ml-12 md:ml-0 md:w-1/2 ${
+                    index % 2 === 0 ? "md:pr-12" : "md:ml-auto md:pl-12"
+                  }`}
+                >
                   <Card className="p-6 hover:shadow-xl transition-all duration-300 border-border bg-card">
                     <div className="flex items-start justify-between mb-4">
                       <div>
-                        <h3 className="text-xl font-bold text-foreground mb-1">{exp.position}</h3>
-                        <h4 className="text-lg font-semibold text-primary mb-2">{exp.company}</h4>
+                        <h3 className="text-xl font-bold text-foreground mb-1">
+                          {exp.position}
+                        </h3>
+                        <h4 className="text-lg font-semibold text-primary mb-2">
+                          {exp.company}
+                        </h4>
                       </div>
-                      {exp.type === 'current' && (
-                        <Badge className="bg-primary text-white">{t('current')}</Badge>
+                      {exp.type === "current" && (
+                        <Badge className="bg-primary text-white">
+                          {t("current")}
+                        </Badge>
                       )}
                     </div>
 
@@ -103,14 +136,21 @@ const Experience = () => {
                       </div>
                     </div>
 
-                    <p className="text-foreground/80 mb-4 leading-relaxed">{exp.description}</p>
+                    <p className="text-foreground/80 mb-4 leading-relaxed">
+                      {exp.description}
+                    </p>
 
                     {/* Achievements */}
                     <div className="mb-4">
-                      <h5 className="font-semibold text-foreground mb-2">{t('mainAchievements')}</h5>
+                      <h5 className="font-semibold text-foreground mb-2">
+                        {t("mainAchievements")}
+                      </h5>
                       <ul className="space-y-1">
                         {exp.achievements.map((achievement, achIndex) => (
-                          <li key={achIndex} className="text-foreground/70 text-sm flex items-start">
+                          <li
+                            key={achIndex}
+                            className="text-foreground/70 text-sm flex items-start"
+                          >
                             <span className="text-primary mr-2 mt-1">•</span>
                             {achievement}
                           </li>
@@ -120,10 +160,16 @@ const Experience = () => {
 
                     {/* Technologies */}
                     <div>
-                      <h5 className="font-semibold text-foreground mb-2">{t('technologies')}</h5>
+                      <h5 className="font-semibold text-foreground mb-2">
+                        {t("technologies")}
+                      </h5>
                       <div className="flex flex-wrap gap-2">
                         {exp.technologies.map((tech, techIndex) => (
-                          <Badge key={techIndex} variant="outline" className="text-xs border-border">
+                          <Badge
+                            key={techIndex}
+                            variant="outline"
+                            className="text-xs border-border"
+                          >
                             {tech}
                           </Badge>
                         ))}

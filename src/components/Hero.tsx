@@ -57,9 +57,7 @@ const Hero = () => {
             style={{ animationDelay: "0.4s" }}
           >
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto leading-relaxed">
-              Desenvolvedor apaixonado por tecnologia com experiência em liderar
-              equipes e criar soluções inovadoras. Especialista em Node.js,
-              Vue.js, React.js e arquiteturas modernas na nuvem.
+              {t("aboutDescription")}
             </p>
           </div>
 
