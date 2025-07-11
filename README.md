@@ -31,3 +31,15 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
+
+## Build And Publish Project on GitHub Pages
+
+Follow these steps:
+
+```sh
+# Step 1: Build Project to dist directory.
+npm run build
+
+# Step 2: Send to GitHub Pages
+npm run deploy
+```
