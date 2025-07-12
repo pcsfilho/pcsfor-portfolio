@@ -1,8 +1,9 @@
 import { Code, Database, Cloud, Wrench, Users, Lightbulb } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-
+import { useLanguage } from "@/hooks/useLanguage";
 const Skills = () => {
+  const { t } = useLanguage();
   const skillCategories = [
     {
       title: "Frontend",
@@ -13,7 +14,10 @@ const Skills = () => {
         { name: "React.js", level: 90, experience: "3+ anos" },
         { name: "JavaScript/TypeScript", level: 95, experience: "5+ anos" },
         { name: "HTML/CSS", level: 90, experience: "5+ anos" },
-        { name: "Tailwind CSS", level: 85, experience: "2+ anos" },
+        { name: "Bootstrap", level: 90, experience: "2+ anos" },
+        { name: "Vuetify", level: 90, experience: "6+ anos" },
+        { name: "Material UI", level: 85, experience: "4+ anos" },
+        { name: "Tailwind CSS", level: 50, experience: "1+ anos" },
       ],
     },
     {
@@ -22,10 +26,11 @@ const Skills = () => {
       color: "from-green-500 to-emerald-600",
       skills: [
         { name: "Node.js", level: 95, experience: "5+ anos" },
-        { name: "Python", level: 85, experience: "3+ anos" },
+        { name: "Python", level: 85, experience: "6+ anos" },
         { name: "Express.js", level: 90, experience: "4+ anos" },
+        { name: "Restify", level: 90, experience: "4+ anos" },
         { name: "API REST", level: 95, experience: "5+ anos" },
-        { name: "GraphQL", level: 80, experience: "2+ anos" },
+        { name: "GraphQL", level: 80, experience: "4+ anos" },
       ],
     },
     {
@@ -36,12 +41,12 @@ const Skills = () => {
         { name: "AWS", level: 90, experience: "3+ anos" },
         { name: "Docker", level: 85, experience: "3+ anos" },
         { name: "CI/CD", level: 85, experience: "3+ anos" },
-        { name: "Kubernetes", level: 75, experience: "2+ anos" },
-        { name: "Terraform", level: 80, experience: "2+ anos" },
+        { name: "Kubernetes", level: 75, experience: "1+ anos" },
+        { name: "Terraform", level: 80, experience: "1+ anos" },
       ],
     },
     {
-      title: "Banco de Dados",
+      title: t("dataBase"),
       icon: Database,
       color: "from-purple-500 to-pink-600",
       skills: [
@@ -53,7 +58,7 @@ const Skills = () => {
       ],
     },
     {
-      title: "Ferramentas",
+      title: t("tools"),
       icon: Wrench,
       color: "from-indigo-500 to-blue-600",
       skills: [
@@ -69,11 +74,11 @@ const Skills = () => {
       icon: Users,
       color: "from-teal-500 to-green-600",
       skills: [
-        { name: "Liderança", level: 90, experience: "3+ anos" },
+        { name: t("leadership"), level: 90, experience: "3+ anos" },
         { name: "Mentoring", level: 85, experience: "3+ anos" },
-        { name: "Comunicação", level: 95, experience: "Sempre" },
-        { name: "Trabalho em Equipe", level: 95, experience: "Sempre" },
-        { name: "Resolução de Problemas", level: 90, experience: "Sempre" },
+        { name: t("communication"), level: 95, experience: "Sempre" },
+        { name: t("teamwork"), level: 95, experience: "Sempre" },
+        { name: t("problemSolving"), level: 90, experience: "Sempre" },
       ],
     },
   ];
@@ -85,15 +90,14 @@ const Skills = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Minhas{" "}
+              {t("my")}{" "}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Habilidades
+                {t("skills")}
               </span>
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-4"></div>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Tecnologias e competências que domino, desenvolvidas ao longo de
-              anos de experiência prática em projetos reais.
+              {t("skillsSentence")}
             </p>
           </div>
 
@@ -151,14 +155,12 @@ const Skills = () => {
             <Card className="inline-block p-6 bg-gradient-to-r from-primary/5 to-secondary/5 border-0">
               <div className="flex items-center justify-center mb-4">
                 <Lightbulb className="w-8 h-8 text-primary mr-3" />
-                <h4 className="text-xl font-bold text-gray-900">
-                  Sempre Aprendendo
+                <h4 className="text-xl font-bold text-gray-400">
+                  {t("alwaysLearning")}
                 </h4>
               </div>
-              <p className="text-gray-900 max-w-2xl">
-                A tecnologia evolui rapidamente, e eu mantenho-me atualizado
-                através de cursos, certificações e projetos pessoais. Atualmente
-                estudando arquiteturas serverless avançadas e Machine Learning.
+              <p className="text-gray-400 max-w-2xl">
+                {t("alwaysLearningDescription")}
               </p>
             </Card>
           </div>

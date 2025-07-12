@@ -1,4 +1,5 @@
 import { ExternalLink, Github, Star } from "lucide-react";
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -6,26 +7,40 @@ import { useLanguage } from "@/hooks/useLanguage";
 
 const Projects = () => {
   const { t } = useLanguage();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false);
+    }
+  };
   const projects = [
     {
-      title: "Sistema de Automação ClickZap",
-      description:
-        "Plataforma completa de automação de marketing via WhatsApp Business, com dashboard em tempo real, chatbots inteligentes e integração com CRM.",
+      title: t("titleCliczap"),
+      description: t("descriptionCliczap"),
       image:
         "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop",
-      technologies: ["Node.js", "Vue.js", "WhatsApp API", "MySQL", "Redis"],
-      category: "Profissional",
-      status: "Concluído",
+      technologies: [
+        "Node.js",
+        "Vue.js",
+        "WhatsApp API",
+        "MySQL",
+        "Redis",
+        "MongoDB",
+        "NodeJs",
+      ],
+      category: t("professional"),
+      status: t("done"),
       highlights: [
-        "5000+ usuários ativos",
-        "Alta disponibilidade",
-        "Tempo real",
+        t("highlightsCliczap1"),
+        t("highlightsCliczap2"),
+        t("highlightsCliczap3"),
       ],
     },
     {
-      title: "Arquitetura Cloud AWS",
-      description:
-        "Design e implementação de arquitetura serverless na AWS para aplicação de alto volume, com auto-scaling, monitoramento e CI/CD automatizado.",
+      title: t("awsCloudArchitecture"),
+      description: t("awsCloudArchitectureDescription"),
       image:
         "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=300&fit=crop",
       technologies: [
@@ -35,14 +50,13 @@ const Projects = () => {
         "CloudWatch",
         "Terraform",
       ],
-      category: "Arquitetura",
-      status: "Em produção",
+      category: t("architecture"),
+      status: t("inProduction"),
       highlights: ["99.9% uptime", "Auto-scaling", "Serverless"],
     },
     {
-      title: "Dashboard de Gestão - Vollare",
-      description:
-        "Interface administrativa moderna para gestão de equipes e projetos, com relatórios em tempo real, notificações push e sistema de permissões granular.",
+      title: t("titleVollare"),
+      description: t("descriptionVollare"),
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop",
       technologies: [
@@ -50,22 +64,33 @@ const Projects = () => {
         "Composition API",
         "Chart.js",
         "WebSockets",
-        "PostgreSQL",
+        "MongoDB",
+        "GraphQL",
+        "Redis",
+        "NodeJs",
       ],
       category: "Frontend",
-      status: "Ativo",
-      highlights: ["Interface moderna", "Tempo real", "Responsivo"],
+      status: t("active"),
+      highlights: [
+        t("highlightsVollare1"),
+        t("highlightsVollare2"),
+        t("highlightsVollare3"),
+        t("highlightsVollare4"),
+      ],
     },
     {
-      title: "API de Microserviços",
-      description:
-        "Arquitetura de microserviços com Node.js, implementando padrões de design como CQRS, Event Sourcing e Circuit Breaker para alta disponibilidade.",
+      title: t("titleMicroService"),
+      description: t("descriptionMicroService"),
       image:
         "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=300&fit=crop",
       technologies: ["Node.js", "Docker", "Kubernetes", "Redis", "RabbitMQ"],
       category: "Backend",
-      status: "Em desenvolvimento",
-      highlights: ["Microserviços", "Alta performance", "Escalável"],
+      status: t("inDevelopment"),
+      highlights: [
+        t("highlightsMicroService1"),
+        t("highlightsMicroService2"),
+        t("highlightsMicroService3"),
+      ],
     },
   ];
 
@@ -164,7 +189,7 @@ const Projects = () => {
                   {/* Actions */}
                   <div className="flex items-center justify-between pt-4 border-t border-gray-200">
                     <div className="text-sm text-gray-500">
-                      Projeto {project.category}
+                      {project.category}
                     </div>
                     {/* <div className="flex space-x-2">
                       <Button
@@ -184,16 +209,14 @@ const Projects = () => {
 
           {/* Call to Action */}
           <div className="text-center mt-12">
-            <p className="text-gray-600 mb-6">
-              Quer ver mais projetos ou discutir uma oportunidade?
-            </p>
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
-              asChild
+            <p className="text-gray-600 mb-6">{t("mooreProjects")}</p>
+            <a
+              key="#contact"
+              onClick={() => scrollToSection("#contact")}
+              className="bg-gradient-to-r cursor-pointer from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
             >
-              <a href="#contact">Vamos conversar</a>
-            </Button>
+              {t("letsTalk")}
+            </a>
           </div>
         </div>
       </div>

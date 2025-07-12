@@ -46,7 +46,7 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                {t("fullStackDeveloper")}
+                {t("engineerFullStackDeveloper")}
               </h3>
               <div>
                 <p className="text-gray-700 leading-relaxed text-justify">

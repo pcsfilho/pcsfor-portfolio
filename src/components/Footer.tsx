@@ -1,7 +1,18 @@
+import { useLanguage } from "@/hooks/useLanguage";
+import { useState } from "react";
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
 
 const Footer = () => {
+  const { t } = useLanguage();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const currentYear = new Date().getFullYear();
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false);
+    }
+  };
 
   return (
     <footer className="bg-gray-900 text-white py-12">
@@ -15,50 +26,55 @@ const Footer = () => {
                 Paulo Filho
               </h3>
               <p className="text-gray-400 leading-relaxed">
-                Full Stack Developer & Líder Técnico apaixonado por criar
-                soluções que fazem a diferença.
+                {t("engineerFullStackTechLead")}
               </p>
             </div>
 
             {/* Quick Links */}
             <div className="text-center">
-              <h4 className="text-lg font-semibold mb-4">Links Rápidos</h4>
+              <h4 className="text-lg font-semibold mb-4"> {t("quickLinks")}</h4>
               <div className="space-y-2">
                 <a
-                  href="#home"
-                  className="block text-gray-400 hover:text-primary transition-colors"
+                  key="#home"
+                  onClick={() => scrollToSection("#home")}
+                  className="block cursor-pointer text-gray-400 hover:text-primary transition-colors"
                 >
-                  Início
+                  {t("home")}
                 </a>
                 <a
-                  href="#about"
-                  className="block text-gray-400 hover:text-primary transition-colors"
+                  key="#about"
+                  onClick={() => scrollToSection("#about")}
+                  className="block cursor-pointer text-gray-400 hover:text-primary transition-colors"
                 >
-                  Sobre
+                  {t("about")}
                 </a>
                 <a
-                  href="#experience"
-                  className="block text-gray-400 hover:text-primary transition-colors"
+                  key="#experience"
+                  onClick={() => scrollToSection("#experience")}
+                  className="block cursor-pointer text-gray-400 hover:text-primary transition-colors"
                 >
-                  Experiência
+                  {t("experience")}
                 </a>
                 <a
-                  href="#projects"
-                  className="block text-gray-400 hover:text-primary transition-colors"
+                  key="#projects"
+                  onClick={() => scrollToSection("#projects")}
+                  className="block cursor-pointer text-gray-400 hover:text-primary transition-colors"
                 >
-                  Projetos
+                  {t("projects")}
                 </a>
                 <a
-                  href="#skills"
-                  className="block text-gray-400 hover:text-primary transition-colors"
+                  key="#skills"
+                  onClick={() => scrollToSection("#skills")}
+                  className="block cursor-pointer text-gray-400 hover:text-primary transition-colors"
                 >
-                  Habilidades
+                  {t("skills")}
                 </a>
                 <a
-                  href="#contact"
-                  className="block text-gray-400 hover:text-primary transition-colors"
+                  key="#contact"
+                  onClick={() => scrollToSection("#contact")}
+                  className="block cursor-pointer text-gray-400 hover:text-primary transition-colors"
                 >
-                  Contato
+                  {t("contact")}
                 </a>
               </div>
             </div>
@@ -67,7 +83,7 @@ const Footer = () => {
             <div className="text-center md:text-right">
               <h4 className="text-lg font-semibold mb-4">Contato</h4>
               <div className="space-y-2 text-gray-400">
-                <p>Salvador, BA - Brasil</p>
+                <p>Feira de Santana - Salvador, BA - Brasil</p>
                 <a
                   href="mailto:paulo.ecomp@gmail.com"
                   className="block hover:text-primary transition-colors"
@@ -114,7 +130,7 @@ const Footer = () => {
           <div className="border-t border-gray-800 pt-8 text-center">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-gray-400 text-sm">
-                © {currentYear} Paulo Filho. Todos os direitos reservados.
+                © {currentYear} Paulo Filho. {t("allRightsReserved")}
               </p>
               {/* <div className="flex items-center text-gray-400 text-sm">
                 <span>Feito por</span>

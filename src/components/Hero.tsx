@@ -31,7 +31,7 @@ const Hero = () => {
           <div className="mb-8 animate-fade-in">
             <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary shadow-2xl">
               <img
-                src="/lovable-uploads/80edfbe2-1f2a-4fec-81ed-cef44f2d9375.png"
+                src="/uploads/paulo-full-stack-developer-tech-lead.png"
                 alt="Paulo Filho"
                 className="w-full h-full object-cover"
               />
@@ -47,7 +47,7 @@ const Hero = () => {
               Paulo Filho
             </h1>
             <p className="text-xl md:text-2xl text-foreground/80 font-medium">
-              {t("fullStackDeveloper")}
+              {t("engineerFullStackDeveloper")}
             </p>
           </div>
 

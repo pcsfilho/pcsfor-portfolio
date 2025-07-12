@@ -18,9 +18,14 @@ const translations = {
               Vue.js, React.js e arquiteturas modernas na nuvem.`,
     experience: "Experiência",
     projects: "Projetos",
+    project: "Projeto",
     skills: "Habilidades",
+    skillsSentence:
+      "Tecnologias e competências que domino, desenvolvidas ao longo de anos de experiência prática em projetos reais.",
     contact: "Contato",
     fullStackDeveloper: "Densevolvedor Full Stack e Líder Técnico",
+    engineerFullStackDeveloper:
+      "Engenheiro de Computação, Densevolvedor Full Stack e Líder Técnico",
     fullStack: "Densevolvedor Full Stack",
     knowMyWork: "Conheça meu trabalho",
     getInTouch: "Entrar em contato",
@@ -74,12 +79,15 @@ const translations = {
       "Integração com APIs do WhatsApp Business",
     experiencesAchievementsClickZapSkils4:
       "Otimização de performance em aplicações de alto volume",
-    fullStackDeveloperDescription1: `Com mais de 5 anos de experiência em desenvolvimento de
-                  software, tenho uma paixão genuína por criar soluções que
-                  realmente fazem a diferença. Minha jornada começou com a
-                  curiosidade de entender como as coisas funcionam e evoluiu
-                  para uma carreira dedicada a transformar ideias em produtos
-                  digitais de alto impacto.`,
+    fullStackDeveloperDescription1: `Sou Engenheiro de Computação formado pela Universidade Estadual de Feira de Santana (UEFS), curso que valoriza o Aprendizado Baseado em Problemas (Problem-Based Learning – PBL) em sua grade, metodologia que moldou minha capacidade de resolver desafios complexos de forma criativa e colaborativa. Durante a graduação, integrei o PET (Programa de Educação Tutorial), onde desenvolvi projetos multidisciplinares e fortalecei minhas habilidades em liderança, pesquisa e extensão.
+
+Tenho mais de 5 anos de experiência no desenvolvimento de software, atuando em projetos que vão desde sistemas corporativos até produtos digitais com foco em usabilidade e performance. Minha trajetória profissional é movida pela curiosidade e pela vontade de transformar ideias em soluções reais e escaláveis.
+
+Atualmente, atuo como Líder Técnico na Vollare, onde combino uma base técnica sólida com competências de gestão para orientar equipes no desenvolvimento de soluções eficientes, seguras e de alto valor para o cliente. Acredito que tecnologia é sobre pessoas — por isso, priorizo a construção de times colaborativos e ambientes onde o aprendizado contínuo é parte da cultura.
+
+Sou especializado em arquiteturas modernas de software e tenho experiência prática com Node.js, Vue.js, React, Python e serviços da AWS. Estou constantemente aprendendo, experimentando novas tecnologias e compartilhando conhecimento com a comunidade tech.
+
+Busco oportunidades onde possa unir minha paixão por engenharia, inovação e liderança para criar produtos que façam a diferença.`,
     fullStackDeveloperDescription2: `Atualmente, atuo como Líder Técnico na Empresa Vollare, onde alio conhecimento técnico aprofundado a habilidades de liderança para orientar equipes na entrega de soluções eficientes e de alta qualidade. Acredito que tecnologia é, acima de tudo, sobre pessoas — por isso, meu foco está em construir times colaborativos e produtos que gerem valor real.`,
     fullStackDeveloperDescription3: `Sou especializado em arquiteturas modernas e possuo sólida
                   experiência com Node.js, Vue.js, React.js, Python e AWS. Estou
@@ -119,6 +127,51 @@ const translations = {
     projectsIntroduction:
       "Alguns dos projetos que desenvolvi ao longo da minha carreira, demonstrando expertise em diferentes tecnologias e domínios.",
     seeMoore: "Ver mais",
+    professional: "Profissional",
+    done: "Concluído",
+    architecture: "Arquitetura",
+    inProduction: "Em produção",
+    titleCliczap: "Sistema de Automação com Whatsapp na Empresa ClickZap",
+    descriptionCliczap:
+      "Plataforma completa de automação de marketing via WhatsApp Business, com dashboard em tempo real, chatbots inteligentes e integração com CRM.",
+    highlightsCliczap1: "5000+ usuários ativos",
+    highlightsCliczap2: "Alta disponibilidade",
+    highlightsCliczap3: "Tempo real",
+    awsCloudArchitecture: "Arquitetura Cloud AWS",
+    awsCloudArchitectureDescription:
+      "Design e implementação de arquitetura serverless na AWS para aplicação de alto volume, com auto-scaling, monitoramento e CI/CD automatizado.",
+    titleVollare: "Sistema de Gestão de Registro de Imóveis - Vollare",
+    descriptionVollare:
+      "Interface administrativa moderna para gestão voltados para cartórios sistemas de registro de imóveis, com integraçõ com tribunais de Justiça e orgãos nacionais. Desenvolvimento de projetos  de atendimento ao cliente, relatórios de gestão em tempo real, notificações push e sistema de permissões granular.",
+    highlightsVollare1: "Interface moderna",
+    highlightsVollare2: "Tempo real",
+    highlightsVollare3: "Responsivo",
+    highlightsVollare4: "Integrações com ferramentas externas",
+    active: "Ativo",
+    titleMicroService: "API de Microserviços",
+    descriptionMicroService:
+      "Arquitetura de microserviços com Node.js, implementando padrões de design como CQRS, Event Sourcing e Circuit Breaker para alta disponibilidade.",
+    highlightsMicroService1: "Microserviços",
+    highlightsMicroService2: "Alta performance",
+    highlightsMicroService3: "Escalável",
+    inDevelopment: "Em desenvolvimento",
+    mooreProjects: "Quer ver mais projetos ou discutir uma oportunidade?",
+    letsTalk: "Vamos conversar",
+    dataBase: "Banco de Dados",
+    tools: "Ferramentas",
+    leadership: "Liderança",
+    communication: "Comunicação",
+    teamwork: "Trabalho em Equipe",
+    problemSolving: "Resolução de Problemas",
+    alwaysLearning: "Sempre Aprendendo",
+    alwaysLearningDescription:
+      "A tecnologia evolui rapidamente, e eu mantenho-me atualizado através de cursos, certificações e projetos pessoais. Atualmente estudando arquiteturas serverless avançadas e Machine Learning.",
+    letsChatDescription: `Estou sempre aberto a novas oportunidades e projetos interessantes. 
+              Entre em contato e vamos transformar ideias em realidade!`,
+    engineerFullStackTechLead:
+      "Engenheiro de Computação, Desenvolvedor Full Stack & Líder Técnico apaixonado por criar soluções que fazem a diferença.",
+    quickLinks: "Links Rápidos",
+    allRightsReserved: "Todos os direitos reservados.",
   },
   en: {
     home: "Home",
@@ -127,11 +180,24 @@ const translations = {
     aboutDescription: `A passionate developer with experience leading teams and creating innovative solutions. Specializing in Node.js, Vue.js, React.js, and modern cloud architectures.`,
     experience: "Experience",
     projects: "Projects",
+    project: "Project",
     skills: "Skills",
+    skillsSentence:
+      "Technologies and skills I master, developed over years of practical experience in real projects.",
     contact: "Contact",
     fullStack: "Full Stack Developer",
     fullStackDeveloper: "Full Stack Developer & Technical Leader",
-    fullStackDeveloperDescription1: `With over 5 years of experience in software development, I have a genuine passion for creating solutions that truly make a difference. My journey began with a curiosity to understand how things work and evolved into a career dedicated to transforming ideas into high-impact digital products.`,
+    engineerFullStackDeveloper:
+      "Computer Engineer, Full Stack Developer and Technical Lead",
+    fullStackDeveloperDescription1: `I graduated in Computer Engineering from the State University of Feira de Santana (UEFS), an institution that values Problem-Based Learning (PBL), a methodology that shaped my ability to solve complex challenges creatively and collaboratively. During my undergraduate studies, I participated in the PET (Tutorial Education Program), where I developed multidisciplinary projects and strengthened my leadership, research, and outreach skills.
+
+I have over 5 years of experience in software development, working on projects ranging from enterprise systems to digital products with a focus on usability and performance. My professional trajectory is driven by curiosity and the desire to transform ideas into real, scalable solutions.
+
+Currently, I work as a Technical Leader at Vollare, where I combine a solid technical foundation with management skills to guide teams in developing efficient, secure, and high-value solutions for the client. I believe that technology is about people—that's why I prioritize building collaborative teams and environments where continuous learning is part of the culture.
+
+I specialize in modern software architectures and have hands-on experience with Node.js, Vue.js, React, Python, and AWS services. I'm constantly learning, experimenting with new technologies, and sharing knowledge with the tech community.
+
+I seek opportunities where I can combine my passion for engineering, innovation, and leadership to create products that make a difference.`,
     knowMyWork: "Know my work",
     getInTouch: "Get in touch",
     professionalExperience: "Professional Experience",
@@ -219,6 +285,51 @@ and actively contributing to the technology community.`,
     projectsIntroduction:
       "Some of the projects I've developed throughout my career, demonstrating expertise in different technologies and domains.",
     seeMoore: "See more",
+    professional: "Professional",
+    done: "Done",
+    architecture: "Architecture",
+    inProduction: "In Production",
+    titleCliczap: "Automation System with WhatsApp at ClickZap Company",
+    descriptionCliczap:
+      "Complete marketing automation platform via WhatsApp Business, with real-time dashboard, intelligent chatbots, and CRM integration.",
+    highlightsCliczap1: "5,000+ active users.",
+    highlightsCliczap2: "High availability.",
+    highlightsCliczap3: "Real-time.",
+    awsCloudArchitecture: "AWS Cloud Architecture",
+    awsCloudArchitectureDescription:
+      "Design and implementation of serverless architecture on AWS for high-volume applications, with auto-scaling, monitoring and automated CI/CD.",
+    titleVollare: "Real Estate Registry Management System - Vollare",
+    descriptionVollare:
+      "A modern administrative interface for managing notary offices and real estate registration systems, with integration with courts of justice and national agencies. Development of customer service projects, real-time management reports, push notifications, and a granular permission system.",
+    highlightsVollare1: "Modern interface",
+    highlightsVollare2: "Real-time",
+    highlightsVollare3: "Responsive",
+    highlightsVollare4: "Integrations with external tools",
+    active: "Active",
+    titleMicroService: "Microservices API",
+    descriptionMicroService:
+      "Microservices architecture with Node.js, implementing design patterns such as CQRS, Event Sourcing, and Circuit Breaker for high availability.",
+    highlightsMicroService1: "Microservices",
+    highlightsMicroService2: "High performance",
+    highlightsMicroService3: "Scalable",
+    inDevelopment: "In development",
+    mooreProjects: "Want to see more projects or discuss an opportunity?",
+    letsTalk: "Let's talk",
+    dataBase: "Data Base",
+    tools: "Tools",
+    leadership: "Leadership",
+    communication: "Communication",
+    teamwork: "Team Work",
+    problemSolving: "Problem Solving",
+    alwaysLearning: "Always Learning",
+    alwaysLearningDescription:
+      "Technology evolves rapidly, and I stay up-to-date through courses, certifications, and personal projects. I'm currently studying advanced serverless architectures and machine learning.",
+    letsChatDescription: `I'm always open to new opportunities and interesting projects.
+Get in touch and let's turn your ideas into reality!`,
+    engineerFullStackTechLead:
+      "Computer Engineer, Full Stack Developer, and Technical Lead passionate about creating solutions that make a difference.",
+    quickLinks: "Quick Links",
+    allRightsReserved: "All rights reserved.",
   },
 };
 
