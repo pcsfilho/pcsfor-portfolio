@@ -83,10 +83,6 @@ const translations = {
 
 Tenho mais de 5 anos de experiência no desenvolvimento de software, atuando em projetos que vão desde sistemas corporativos até produtos digitais com foco em usabilidade e performance. Minha trajetória profissional é movida pela curiosidade e pela vontade de transformar ideias em soluções reais e escaláveis.
 
-Atualmente, atuo como Líder Técnico na Vollare, onde combino uma base técnica sólida com competências de gestão para orientar equipes no desenvolvimento de soluções eficientes, seguras e de alto valor para o cliente. Acredito que tecnologia é sobre pessoas — por isso, priorizo a construção de times colaborativos e ambientes onde o aprendizado contínuo é parte da cultura.
-
-Sou especializado em arquiteturas modernas de software e tenho experiência prática com Node.js, Vue.js, React, Python e serviços da AWS. Estou constantemente aprendendo, experimentando novas tecnologias e compartilhando conhecimento com a comunidade tech.
-
 Busco oportunidades onde possa unir minha paixão por engenharia, inovação e liderança para criar produtos que façam a diferença.`,
     fullStackDeveloperDescription2: `Atualmente, atuo como Líder Técnico na Empresa Vollare, onde alio conhecimento técnico aprofundado a habilidades de liderança para orientar equipes na entrega de soluções eficientes e de alta qualidade. Acredito que tecnologia é, acima de tudo, sobre pessoas — por isso, meu foco está em construir times colaborativos e produtos que gerem valor real.`,
     fullStackDeveloperDescription3: `Sou especializado em arquiteturas modernas e possuo sólida
@@ -192,10 +188,6 @@ Busco oportunidades onde possa unir minha paixão por engenharia, inovação e l
     fullStackDeveloperDescription1: `I graduated in Computer Engineering from the State University of Feira de Santana (UEFS), an institution that values Problem-Based Learning (PBL), a methodology that shaped my ability to solve complex challenges creatively and collaboratively. During my undergraduate studies, I participated in the PET (Tutorial Education Program), where I developed multidisciplinary projects and strengthened my leadership, research, and outreach skills.
 
 I have over 5 years of experience in software development, working on projects ranging from enterprise systems to digital products with a focus on usability and performance. My professional trajectory is driven by curiosity and the desire to transform ideas into real, scalable solutions.
-
-Currently, I work as a Technical Leader at Vollare, where I combine a solid technical foundation with management skills to guide teams in developing efficient, secure, and high-value solutions for the client. I believe that technology is about people—that's why I prioritize building collaborative teams and environments where continuous learning is part of the culture.
-
-I specialize in modern software architectures and have hands-on experience with Node.js, Vue.js, React, Python, and AWS services. I'm constantly learning, experimenting with new technologies, and sharing knowledge with the tech community.
 
 I seek opportunities where I can combine my passion for engineering, innovation, and leadership to create products that make a difference.`,
     knowMyWork: "Know my work",
