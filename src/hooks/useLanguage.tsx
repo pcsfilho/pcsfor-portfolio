@@ -79,7 +79,7 @@ const translations = {
       "Integração com APIs do WhatsApp Business",
     experiencesAchievementsClickZapSkils4:
       "Otimização de performance em aplicações de alto volume",
-    fullStackDeveloperDescription1: `Sou Engenheiro de Computação formado pela Universidade Estadual de Feira de Santana (UEFS), curso que valoriza o Aprendizado Baseado em Problemas (Problem-Based Learning – PBL) em sua grade, metodologia que moldou minha capacidade de resolver desafios complexos de forma criativa e colaborativa. Durante a graduação, integrei o PET (Programa de Educação Tutorial), onde desenvolvi projetos multidisciplinares e fortalecei minhas habilidades em liderança, pesquisa e extensão.
+    fullStackDeveloperDescription1: `Sou Engenheiro de Computação formado pela Universidade Estadual de Feira de Santana (UEFS), curso que valoriza o Aprendizado Baseado em Problemas (Problem-Based Learning – PBL) em sua grade, metodologia que moldou minha capacidade de resolver desafios complexos de forma criativa e colaborativa. Durante a graduação, integrei o PET (Programa de Educação Tutorial), onde desenvolvi projetos multidisciplinares e fortaleci minhas habilidades em liderança, pesquisa e extensão.
 
 Tenho mais de 5 anos de experiência no desenvolvimento de software, atuando em projetos que vão desde sistemas corporativos até produtos digitais com foco em usabilidade e performance. Minha trajetória profissional é movida pela curiosidade e pela vontade de transformar ideias em soluções reais e escaláveis.
 
