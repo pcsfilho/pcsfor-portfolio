@@ -35,6 +35,7 @@ export const useTimeline = ({
       const paragraph = scene.querySelector('.rq-paragraph');
       const label = scene.querySelector('.rq-label');
       const media = scene.querySelector('.rq-scene__media img, .rq-scene__media video');
+      const mediaVideo = media instanceof HTMLVideoElement ? media : null;
 
       // Create animation timeline for this scene
       const tl = gsap.timeline({
@@ -119,6 +120,11 @@ export const useTimeline = ({
         end: 'bottom 20%',
         onEnter: () => {
           tl.play();
+          if (mediaVideo) {
+            mediaVideo.play().catch(() => {
+              // iOS may still block; user can tap the video controls.
+            });
+          }
           onSceneEnter?.(index);
         },
         onLeave: () => {
@@ -126,6 +132,11 @@ export const useTimeline = ({
         },
         onEnterBack: () => {
           tl.play();
+          if (mediaVideo) {
+            mediaVideo.play().catch(() => {
+              // Ignore and keep the rest of the scene behavior.
+            });
+          }
           onSceneEnter?.(index);
         },
         onLeaveBack: () => {

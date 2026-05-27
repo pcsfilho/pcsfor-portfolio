@@ -94,6 +94,25 @@ const RaquelGuedes: React.FC = () => {
 
   const handleLoadingInteraction = useCallback(() => {
     startAudio();
+
+    // iOS: unlock inline videos after the first user gesture.
+    const videos = document.querySelectorAll<HTMLVideoElement>('.rq-scene__media video');
+    videos.forEach((video) => {
+      video.muted = true;
+      video.playsInline = true;
+
+      const playPromise = video.play();
+      if (playPromise?.then) {
+        playPromise
+          .then(() => {
+            video.pause();
+            video.currentTime = 0;
+          })
+          .catch(() => {
+            // Ignore unlock failures; we retry when the scene enters viewport.
+          });
+      }
+    });
   }, [startAudio]);
 
   // Set page title

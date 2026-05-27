@@ -63,7 +63,7 @@ export const scenes: Scene[] = [
     label: "Prazer",
     title: "Olá, me chamo Raquel",
     subtitle:
-      "Tenho certeza que vocês já sabem, mas eu tenho o maior coração do mundo. Sou megar hiper fofa, adoro um abraço e um cafuné. Sou apaixonada por natureza, por animais e por pessoas. Sou uma pessoa de fases, mas uma coisa é constante: a minha vontade de cuidar e de me conectar.",
+      "Tenho certeza que vocês já sabem, mas eu tenho o maior coração do mundo. Sou mega, hiper fofa, adoro um abraço e um carinho. Sou apaixonada por natureza, por animais e por pessoas. Sou uma pessoa de fases, mas uma coisa é constante: a minha vontade de cuidar e de me conectar.",
     animation: "kenburns",
     textPosition: "center",
     overlayDark: true,

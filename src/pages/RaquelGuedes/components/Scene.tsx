@@ -73,6 +73,7 @@ const Scene: React.FC<SceneProps> = ({ scene, index }) => {
             muted
             loop
             playsInline
+            preload="metadata"
             className={imageLoaded ? 'loaded' : ''}
             onCanPlay={() => setImageLoaded(true)}
           />
