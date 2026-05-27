@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
-import { Howl } from 'howler';
+import { Howl, Howler } from 'howler';
 
 interface UseAudioOptions {
   src: string;
@@ -11,6 +11,7 @@ interface UseAudioReturn {
   isPlaying: boolean;
   isLoaded: boolean;
   isMuted: boolean;
+  start: () => void;
   toggle: () => void;
   play: () => void;
   pause: () => void;
@@ -27,30 +28,70 @@ export const useAudio = ({
   const [isLoaded, setIsLoaded] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const soundRef = useRef<Howl | null>(null);
-  const hasStarted = useRef(false);
   const volumeRef = useRef(volume);
+  const shouldPlayWhenReady = useRef(false);
+  const startRequested = useRef(false);
+  const unlockHandlerRef = useRef<(() => void) | null>(null);
+
+  const ensurePlay = useCallback(() => {
+    const sound = soundRef.current;
+    if (!sound) return;
+
+    if (sound.playing()) {
+      setIsPlaying(true);
+      return;
+    }
+
+    if (!isLoaded) {
+      shouldPlayWhenReady.current = true;
+      return;
+    }
+
+    sound.volume(volumeRef.current);
+
+    try {
+      sound.play();
+    } catch (error) {
+      console.error('Audio play error:', error);
+    }
+  }, [isLoaded]);
 
   // Initialize Howl instance
   useEffect(() => {
-    console.log('Creating Howl with src:', src, 'volume:', volumeRef.current);
-
     soundRef.current = new Howl({
       src: [src],
       volume: volumeRef.current,
       loop,
       preload: true,
       onload: () => {
-        console.log('Audio loaded successfully');
         setIsLoaded(true);
+
+        if (shouldPlayWhenReady.current || startRequested.current) {
+          shouldPlayWhenReady.current = false;
+          ensurePlay();
+        }
       },
       onloaderror: (_id, error) => {
         console.error('Audio load error:', error);
       },
       onplayerror: (_id, error) => {
         console.error('Audio play error:', error);
+
+        if (!unlockHandlerRef.current) {
+          const unlockAndRetry = () => {
+            Howler.off('unlock', unlockAndRetry);
+            unlockHandlerRef.current = null;
+
+            if (startRequested.current) {
+              ensurePlay();
+            }
+          };
+
+          unlockHandlerRef.current = unlockAndRetry;
+          Howler.once('unlock', unlockAndRetry);
+        }
       },
       onplay: () => {
-        console.log('Audio now playing, volume:', soundRef.current?.volume());
         setIsPlaying(true);
       },
       onpause: () => {
@@ -62,45 +103,24 @@ export const useAudio = ({
     });
 
     return () => {
+      if (unlockHandlerRef.current) {
+        Howler.off('unlock', unlockHandlerRef.current);
+        unlockHandlerRef.current = null;
+      }
       if (soundRef.current) {
         soundRef.current.unload();
       }
     };
-  }, [src, loop]);
+  }, [src, loop, ensurePlay]);
 
-  // Start audio on first user interaction
-  const startAudio = useCallback(() => {
-    if (!hasStarted.current && soundRef.current) {
-      hasStarted.current = true;
-      console.log('User interaction detected, starting audio...');
-      soundRef.current.volume(volumeRef.current);
-      soundRef.current.play();
-    }
-  }, []);
-
-  // Listen for user interactions to start audio
-  useEffect(() => {
-    const handleInteraction = () => {
-      startAudio();
-    };
-
-    document.addEventListener('click', handleInteraction);
-    document.addEventListener('touchstart', handleInteraction);
-    document.addEventListener('keydown', handleInteraction);
-
-    return () => {
-      document.removeEventListener('click', handleInteraction);
-      document.removeEventListener('touchstart', handleInteraction);
-      document.removeEventListener('keydown', handleInteraction);
-    };
-  }, [startAudio]);
+  const start = useCallback(() => {
+    startRequested.current = true;
+    ensurePlay();
+  }, [ensurePlay]);
 
   const play = useCallback(() => {
-    if (soundRef.current && !isPlaying) {
-      soundRef.current.volume(volumeRef.current);
-      soundRef.current.play();
-    }
-  }, [isPlaying]);
+    start();
+  }, [start]);
 
   const pause = useCallback(() => {
     if (soundRef.current && isPlaying) {
@@ -134,15 +154,16 @@ export const useAudio = ({
       soundRef.current.mute(false);
       setIsMuted(false);
       if (!isPlaying) {
-        soundRef.current.play();
+        start();
       }
     }
-  }, [isPlaying]);
+  }, [isPlaying, start]);
 
   return {
     isPlaying,
     isLoaded,
     isMuted,
+    start,
     toggle,
     play,
     pause,

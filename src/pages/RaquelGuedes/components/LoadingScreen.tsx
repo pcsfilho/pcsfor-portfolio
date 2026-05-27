@@ -3,6 +3,7 @@ import ParticleEffect from './ParticleEffect';
 
 interface LoadingScreenProps {
   onComplete?: () => void;
+  onInteract?: () => void;
   duration?: number;
   text?: string;
   subtitle?: string;
@@ -10,6 +11,7 @@ interface LoadingScreenProps {
 
 const LoadingScreen: React.FC<LoadingScreenProps> = ({
   onComplete,
+  onInteract,
   duration = 4000,
   text = 'Uma história sobre luz...',
   subtitle = 'Toque para iniciar',
@@ -34,6 +36,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({
   const handleInteraction = () => {
     if (!hasInteracted) {
       setHasInteracted(true);
+      onInteract?.();
     }
   };
 

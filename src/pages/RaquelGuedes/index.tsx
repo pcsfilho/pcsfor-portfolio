@@ -28,7 +28,9 @@ const RaquelGuedes: React.FC = () => {
   const {
     isPlaying,
     isMuted,
+    start: startAudio,
     toggle: toggleAudio,
+    play: playAudio,
   } = useAudio({
     src: audioConfig.src,
     volume: audioConfig.volume,
@@ -84,8 +86,15 @@ const RaquelGuedes: React.FC = () => {
 
   // Toggle audio
   const handleAudioToggle = useCallback(() => {
+    if (!isPlaying) {
+      playAudio();
+    }
     toggleAudio();
-  }, [toggleAudio]);
+  }, [isPlaying, playAudio, toggleAudio]);
+
+  const handleLoadingInteraction = useCallback(() => {
+    startAudio();
+  }, [startAudio]);
 
   // Set page title
   useEffect(() => {
@@ -103,6 +112,7 @@ const RaquelGuedes: React.FC = () => {
       {isLoading && (
         <LoadingScreen
           onComplete={handleLoadingComplete}
+          onInteract={handleLoadingInteraction}
           duration={3000}
           text="Uma história sobre luz..."
           subtitle="Toque para iniciar"
